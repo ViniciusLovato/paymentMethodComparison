@@ -17,4 +17,5 @@ Still to be considered
 
  It its a better deal if we can keep the blue line above 0 during the entire period
 
+Check it out:  https://focused-meitner-6e2092.netlify.com/
  
