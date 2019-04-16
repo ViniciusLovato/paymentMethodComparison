@@ -2,7 +2,7 @@
 
 under construction
 
-Check whether purchases in installments with interests free are a better deal than buy in cash
+Check whether purchases in installments with interests charges are a better deal than buy in cash
 
 ## It should consider
 * Any investments you have and the return value per month (%)
