@@ -1,17 +1,14 @@
 import React, { Component }  from 'react';
-import calculator from '../service/calculator';
-
-let PERCENT = 100;
 
 class Form extends Component { 
 
     constructor(props) {
         super(props);
         this.state = {
-            total: 0,
-            nInstallments: 0,
-            rateOfReturn: 0,
-            partValue: 0
+            total: 4000,
+            nInstallments: 12,
+            rateOfReturn: 0.05,
+            partValue: 400
         };
     
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -30,6 +27,7 @@ class Form extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+
         console.log(this.state);
         let {
             total,
@@ -38,10 +36,9 @@ class Form extends Component {
             partValue
         } = this.state;
 
-        let chartData = calculator.generateChartData(total, nInstallments, partValue, rateOfReturn);
-        let interest = calculator.generateInterest(total, nInstallments, partValue);
-
-        this.props.handleSubmit({chartData, interest});
+        this.props.handleSubmit({
+          total, nInstallments, rateOfReturn, partValue
+        });
     }
 
     render() {
@@ -64,14 +61,14 @@ class Form extends Component {
           Valor da parcela
           <input
             name="partValue"
-            value={this.state.part_value}
+            value={this.state.partValue}
             onChange={this.handleInputChange} />
         </label>
         <label>
           Quanto seu investimento rende ao mês
           <input
             name="rateOfReturn"
-            value={this.state.rate_of_return}
+            value={this.state.rateOfReturn}
             onChange={this.handleInputChange} />
         </label>
         <input type="submit" value="Submit" />
