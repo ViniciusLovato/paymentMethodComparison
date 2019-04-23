@@ -49,7 +49,7 @@ class Home extends Component {
 
     let pie = 
        [
-        { name: 'Valor do produto', value: total },
+        { name: 'Valor do produto', value: parseFloat(total) },
         { name: 'Juros pago', value:  (nInstallments * partValue) - total },
       ];
     
